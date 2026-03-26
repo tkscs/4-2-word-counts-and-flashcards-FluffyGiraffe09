@@ -5,31 +5,16 @@ make the code more compact.
 """
 
 def pad_word_count(essay):
-    """
-    Add more words to an essay by replacing any contractions with two separate
-    words.
+  new_essay = essay
+  dictionary = {}
+  dictionary["n't"] = " not"
+  dictionary["'s"] = " is"
+  dictionary["'re"] = " are"
+  dictionary["'ve"] = " have"
+  for key, value in dictionary.items():
+    new_essay = new_essay.replace(key, value)
+  return new_essay
 
-    Parameters:
-    essay (str): the original essay
-
-    Returns:
-    str: a new essay with more words
-    """
-    # Initialize new essay to match the original.
-    # We will update it and re-assign this variable later.
-    new_essay = essay
-
-    #### START REPLACING CODE HERE
-    new_essay = new_essay.replace("n't", " not")
-    new_essay = new_essay.replace("'s'", " is")
-    new_essay = new_essay.replace("'re'", " are")
-    new_essay = new_essay.replace("'ve'", " have")
-    #### STOP REPLACING CODE HERE
-
-    return new_essay
-
-# Here's the function call.
-# Don't change this.
 print(pad_word_count(
   """
   Cats are cute.

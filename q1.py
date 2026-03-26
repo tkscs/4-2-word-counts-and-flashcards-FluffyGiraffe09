@@ -27,8 +27,33 @@ change in their communities and beyond.
 # (Hint: use the `.split()` method to get a list of all the words) and the
 # values are the number of times each word appears. Print the dicitonary.
 
+list=[]
+for word in text.split(" "):
+    word.lower
+    word = word.replace(".", "")
+    word = word.replace("!", "")
+    word = word.replace("---", "")
+    word = word.replace(",", "")
+    word = word.replace("'", "")
+    word = word.replace("\n", "")
+    word = word.replace(";", "")
+    word = word.replace(":", "")
+    word = word.replace("?", "")
+    word = word.replace(")", "")
+    word = word.replace("(", "")
+    list.append(word)
+word_count = {}
+for word in list:
+    if word in word_count:
+        word_count[word] += 1
+    else:
+        word_count[word] = 1
+print(word_count)
+
+
 # 1. Remove all new lines and punctuation, and convert to all lowercase.
 #### YOUR CODE HERE
+
 
 # 2. Use the `.split()` method to split into a list of words.
 #### YOUR CODE HERE
